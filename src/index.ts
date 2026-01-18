@@ -50,4 +50,7 @@ app.use("/api/projectManager", ProjectManagerRoutes);
 app.use("/api/reminders", reminderRoutes);
 
 const PORT = Number(process.env.PORT) || 4000;
-app.listen(PORT, () => console.log(`API listening on :${PORT}`));
+const dbHost = process.env.DATABASE_URL?.split("@")[1]?.split(":")[0];
+console.log(`API listening on :${PORT}`);
+console.log(`Database Host: ${dbHost}`);
+app.listen(PORT, () => { });
